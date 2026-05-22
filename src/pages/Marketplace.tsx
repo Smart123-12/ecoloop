@@ -357,7 +357,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                           <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest font-mono bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
                             {item.id}
                           </span>
-                          <span className="text-xs bg-slate-900 text-slate-800 border border-slate-800 px-2 py-0.5 rounded">
+                          <span className="text-xs bg-slate-100 text-slate-700 border border-slate-200 px-2 py-0.5 rounded">
                             {item.grade} Grade
                           </span>
                           {item.verified && (
@@ -395,7 +395,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                         <div>
                           <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Spot Rate Offer</p>
                           <p className="text-lg font-black text-slate-900 mt-0.5">{item.price}</p>
-                          <p className="text-[10px] text-slate-400 font-mono mt-0.5">Moisture: {item.purity}</p>
+                          <p className="text-[10px] text-slate-600 font-mono mt-0.5">Moisture: {item.purity}</p>
                         </div>
 
                         <button 

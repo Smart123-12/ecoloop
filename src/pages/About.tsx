@@ -258,6 +258,100 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
         </div>
       </div>
 
+      {/* PLATFORM FEATURES MATRIX */}
+      <div className="mb-20 mt-16 text-left">
+        <div className="text-center mb-10">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-teal-600">Product Capabilities</h2>
+          <p className="mt-2 text-3xl font-extrabold text-slate-900">Core Platform Features Matrix</p>
+          <p className="text-xs text-slate-500 mt-2 max-w-2xl mx-auto">
+            A comprehensive breakdown of features driving efficiency and transparency for Manufacturers, Recyclers, and Admins.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* MANUFACTURER CAPABILITIES */}
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-amber-500" />
+            <div>
+              <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600 mb-4">
+                <Truck className="h-5 w-5" />
+              </div>
+              <h3 className="text-base font-extrabold text-slate-900 mb-1">Manufacturer Features</h3>
+              <p className="text-xs text-slate-500 mb-6">Designed to simplify byproduct listing, dispatch, and compliance tracking.</p>
+              
+              <ul className="space-y-3">
+                {[
+                  "Upload Listing: Seamlessly list byproducts in 30 seconds",
+                  "Add Photos: Visual inspection and quality grading matching",
+                  "Quantity & Type: Specific mass and material class selectors",
+                  "Geographic Coordinates: Accurate pickup coordinates for haulers",
+                  "Buyer Inquiry Desk: Directly review premium recycling bids"
+                ].map((feat, idx) => (
+                  <li key={idx} className="flex gap-2 items-start text-xs text-slate-700 font-medium">
+                    <span className="text-orange-500 text-sm mt-0.5">✓</span>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* RECYCLER CAPABILITIES */}
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-400 to-emerald-500" />
+            <div>
+              <div className="h-10 w-10 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600 mb-4">
+                <Recycle className="h-5 w-5" />
+              </div>
+              <h3 className="text-base font-extrabold text-slate-900 mb-1">Recycler Features</h3>
+              <p className="text-xs text-slate-500 mb-6">Enabling seamless procurement, quality pre-audit, and bidding.</p>
+              
+              <ul className="space-y-3">
+                {[
+                  "Browse Waste: High-fidelity ledger with interactive filters",
+                  "Direct Manufacturer Contact: In-app secure communication",
+                  "Real-Time Smart Alerts: Instant notification on local lots",
+                  "Advanced Search: Filter by precise coordinates & distance",
+                  "Moisture & Purity Filter: Match exactly your feedstock requirements"
+                ].map((feat, idx) => (
+                  <li key={idx} className="flex gap-2 items-start text-xs text-slate-700 font-medium">
+                    <span className="text-teal-600 text-sm mt-0.5">✓</span>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* ADMIN CAPABILITIES */}
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-600 to-indigo-600" />
+            <div>
+              <div className="h-10 w-10 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-4">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <h3 className="text-base font-extrabold text-slate-900 mb-1">Admin Control Console</h3>
+              <p className="text-xs text-slate-500 mb-6">Keeping the marketplace safe, compliant, and highly structured.</p>
+              
+              <ul className="space-y-3">
+                {[
+                  "KYC User Verification: Double-audit of GSTIN & state pollution licenses",
+                  "Approve Listings: Quality control and spam protection filter",
+                  "Manage Disputes: Secure mediation desk for cargo anomalies",
+                  "Global Price Indices: Live reference price database updates",
+                  "Scope 3 Auditing: Download carbon savings certifications"
+                ].map((feat, idx) => (
+                  <li key={idx} className="flex gap-2 items-start text-xs text-slate-700 font-medium">
+                    <span className="text-indigo-600 text-sm mt-0.5">✓</span>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* TECH ARCHITECTURE SECTION */}
       <div className="text-center mb-10">
         <h2 className="text-xs font-bold uppercase tracking-widest text-teal-600">Engineering</h2>

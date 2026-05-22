@@ -215,7 +215,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-teal-500/20 to-transparent" />
                   
                   <div className="flex justify-between items-center text-xs">
-                    <span className="font-mono text-[9px] font-bold text-teal-600 tracking-wider bg-emerald-950/40 border border-emerald-500/15 px-1.5 py-0.5 rounded">
+                    <span className="font-mono text-[9px] font-bold text-teal-700 tracking-wider bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded">
                       {rec.id}
                     </span>
                     <span className="text-teal-700 font-semibold font-mono">{rec.impact}</span>

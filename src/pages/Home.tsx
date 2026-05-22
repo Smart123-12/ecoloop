@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Recycle, ShieldCheck, Cpu, BarChart3, Users, Leaf, ArrowUpRight, Flame, Scale, Globe, Search, Truck, MapPin } from 'lucide-react';
+import { ArrowRight, Recycle, ShieldCheck, Cpu, BarChart3, Users, Leaf, ArrowUpRight, Flame, Scale, Globe, Search, Truck, MapPin, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { GlowCard } from '../components/GlowCard';
 
 interface HomeProps {
@@ -267,6 +267,160 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
               <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
             </GlowCard>
           ))}
+        </div>
+      </section>
+
+      {/* SECTION 3B - INDUSTRIAL CIRCULAR OPPORTUNITY & CHALLENGES */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-slate-200">
+        <div className="absolute top-10 right-10 h-[300px] w-[300px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none" />
+        
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-600 backdrop-blur mb-4">
+            <Globe className="h-3.5 w-3.5 animate-pulse" />
+            <span>Industrial Reality & B2B Solutions</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            The Real B2B Waste Exchange Opportunity
+          </h2>
+          <p className="mt-4 text-base text-slate-600">
+            Disrupting scattered WhatsApp brokers and unorganized scrap dealers to bring structured pricing, end-to-end compliance, and direct regional recycling routing.
+          </p>
+        </div>
+
+        {/* TOP HIGHLIGHT: THE REAL OPPORTUNITY (SMALL FACTORIES) */}
+        <div className="relative mb-16 text-left">
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-teal-500 to-teal-500 opacity-10 blur-lg" />
+          <div className="relative p-6 sm:p-8 rounded-2xl bg-white border border-teal-500/10 shadow-[0_4px_25px_rgba(148,163,184,0.03)] text-left flex flex-col lg:flex-row gap-8 items-center">
+            <div className="lg:w-2/3 space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">💡</span>
+                <h3 className="text-lg font-black text-slate-900">
+                  Real Opportunity ક્યાં છે? <span className="text-teal-600">Small Factories & Small Scale Units</span>
+                </h3>
+              </div>
+              <p className="text-sm text-slate-650 leading-relaxed">
+                Most small-to-medium factories and engineering units <strong>do not systematically monetize</strong> their industrial waste. Instead, they depend entirely on local WhatsApp groups, unverified brokers, and unorganized scrap dealers. 
+              </p>
+              <p className="text-sm text-slate-550 leading-relaxed">
+                This reliance creates a highly opaque market with low recovery rates, poor tracking, and compliance stress. By introducing a direct digital B2B marketplace, EcoLoop brings <strong>transparency, verified grade matching, and automated logistics</strong> directly to their factory gates.
+              </p>
+              <div className="flex flex-wrap gap-2.5 pt-2">
+                {['Direct Monetization', 'WhatsApp Broker Disruption', 'Opaque-to-Transparent', 'KYC Verified Buyers'].map((tag, idx) => (
+                  <span key={idx} className="text-[10px] font-bold tracking-wider uppercase font-mono px-2.5 py-1 rounded bg-teal-50 border border-teal-200 text-teal-700">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="lg:w-1/3 w-full p-6 rounded-xl bg-slate-50 border border-slate-200 text-center shrink-0">
+              <div className="text-3xl font-black text-slate-900">3%–8%</div>
+              <div className="text-xs font-bold text-teal-600 uppercase tracking-widest font-mono mt-1">Transaction Commission</div>
+              <div className="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                Capturing steady margins on every verified circular transaction while managing structured, high-margin hauler routes.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* SIDE-BY-SIDE CHALLENGES CONTAINER */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch text-left">
+          {/* MANUFACTURERS PANEL */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-amber-500" />
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <span className="text-[10px] font-bold text-slate-450 font-mono block">SUPPLY SIDE INEFFICIENCIES</span>
+                  <h3 className="text-xl font-extrabold text-slate-900 mt-1 flex items-center gap-2">
+                    <span>🏭</span> Manufacturers' Disposal Headaches
+                  </h3>
+                </div>
+                <span className="text-[10px] bg-amber-50 text-amber-600 border border-amber-200 px-2 py-0.5 rounded font-bold font-mono">
+                  Disposal Stress
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                Valuable byproducts and scrap materials are sold cheaply or disposed of as liabilities due to fragmented marketing.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  { title: 'Waste Dispose કરવાનું Headache', desc: 'Disposing of large material lots occupies precious warehouse yards and creates high operational and administrative stress.' },
+                  { title: 'Proper Buyer નથી મળતા (No Verified Discoveries)', desc: 'Difficult to locate compliant, high-volume secondary processors nearby, leading to cheap sales to scrap dealers.' },
+                  { title: 'Low Rates મળે (Opaque Undervalued Pricing)', desc: 'Forced to accept cheap, flat rates from localized brokers who leverage information asymmetry to capture all the profits.' },
+                  { title: 'Compliance & Regulatory Issues', desc: 'Failing to track waste end-to-end results in strict environmental audits, regulatory risks, and zero Scope 3 ESG data points.' },
+                  { title: 'Pickup Coordination Problems', desc: 'Manual truck scheduling, loading errors, and high transport hauler rates make transport logistics an operational nightmare.' }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-3 text-xs bg-slate-50 border border-slate-205 p-3.5 rounded-xl">
+                    <div className="h-5 w-5 rounded-full bg-amber-50 border border-amber-200 text-amber-650 flex items-center justify-center font-bold text-[10px] shrink-0 font-mono">
+                      !
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-slate-800">{item.title}</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <button 
+              onClick={() => setCurrentPage('listings')}
+              className="w-full mt-6 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 hover:border-amber-300 text-xs font-bold rounded-xl transition-all text-center flex items-center justify-center gap-1 shadow-sm"
+            >
+              List Factory Waste Lots Now
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
+
+          {/* RECYCLERS PANEL */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-teal-600" />
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <span className="text-[10px] font-bold text-slate-455 font-mono block">DEMAND SIDE FRAGMENTATION</span>
+                  <h3 className="text-xl font-extrabold text-slate-900 mt-1 flex items-center gap-2">
+                    <span>♻️</span> Recyclers' Sourcing Inefficiencies
+                  </h3>
+                </div>
+                <span className="text-[10px] bg-teal-50 text-teal-700 border border-teal-200 px-2 py-0.5 rounded font-bold font-mono">
+                  Sourcing Barriers
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                Recycling processors struggle to secure a stable supply of raw waste inputs, causing high operational downtime.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  { title: 'Consistent Material મળતું નથી (Supply Shortage)', desc: 'Operations suffer from continuous production interruptions because secondary raw material inputs arrive in highly irregular volumes.' },
+                  { title: 'Quality Unknown (Grade Uncertainty)', desc: 'No chemical assay sheets or pre-inspected grade certifications, resulting in contaminated or unusable batches.' },
+                  { title: 'Small Suppliers Scattered (Procurement Costly)', desc: 'Sourcing requires coordinating with hundreds of tiny, unverified GIDC/workshop plants, inflating search and processing overheads.' },
+                  { title: 'Procurement Costly પડે (High Middlemen Fees)', desc: 'Multiple brokerage layers and long-distance transport routes inflate secondary feedstock procurement costs excessively.' },
+                  { title: 'Logistics Coordination Gaps', desc: 'No centralized bulk freight arrangement, raising logistics costs and increasing transit carbon footprints by up to 40%.' }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-3 text-xs bg-slate-50 border border-slate-205 p-3.5 rounded-xl">
+                    <div className="h-5 w-5 rounded-full bg-teal-50 border border-teal-200 text-teal-650 flex items-center justify-center font-bold text-[10px] shrink-0 font-mono">
+                      ?
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-slate-800">{item.title}</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button 
+              onClick={() => setCurrentPage('marketplace')}
+              className="w-full mt-6 py-2.5 bg-teal-50 hover:bg-teal-100 text-teal-750 border border-teal-200 hover:border-teal-300 text-xs font-bold rounded-xl transition-all text-center flex items-center justify-center gap-1 shadow-sm"
+            >
+              Browse Available Scrap Lots
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -540,7 +694,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                   </div>
 
                   <div className="space-y-3">
-                    {matchedRecyclers.map((rec) => (
+                    {matchedRecyclers.map((rec: any) => (
                       <div 
                         key={rec.id} 
                         className="p-5 rounded-xl border border-slate-200 bg-white hover:border-teal-500/20 shadow-[0_2px_10px_rgba(148,163,184,0.02)] transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs animate-fadeIn"
@@ -727,7 +881,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           </div>
           <button 
             onClick={() => setCurrentPage('pricing')}
-            className="px-6 py-3.5 bg-slate-900 border border-slate-700 hover:border-emerald-500/40 text-sm font-bold text-slate-800 rounded-xl transition-all shadow-[0_0_15px_rgba(0,0,0,0.2)]"
+            className="px-6 py-3.5 bg-slate-900 border border-slate-700 hover:border-teal-500/40 text-sm font-bold text-white rounded-xl transition-all shadow-[0_0_15px_rgba(0,0,0,0.2)]"
           >
             Review Premium Pricing Schemes & Features
           </button>

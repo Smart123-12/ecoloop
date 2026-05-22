@@ -212,7 +212,7 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
             </GlowCard>
           ))
         ) : (
-          <div className="col-span-full p-12 text-center rounded-xl border border-slate-800 bg-slate-900/20 text-slate-600">
+          <div className="col-span-full p-12 text-center rounded-xl border border-slate-200 bg-slate-50 text-slate-600">
             <Users className="h-8 w-8 text-slate-500 mx-auto mb-3" />
             <p className="font-semibold">No processors match the selected materials filter.</p>
           </div>
