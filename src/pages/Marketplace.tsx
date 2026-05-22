@@ -340,7 +340,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
               <h3 className="text-sm font-bold text-slate-800">
                 Available Lots ({filteredListings.length})
               </h3>
-              <span className="text-[10px] text-slate-500 font-mono">Real-time ledger updates</span>
+              <span className="text-[10px] text-slate-600 font-mono font-semibold">Real-time ledger updates</span>
             </div>
 
             <div className="space-y-4">

@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-teal-500/10 bg-dark-900/70 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -43,10 +43,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
                 <button
                   key={item.id}
                   onClick={() => setCurrentPage(item.id)}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'bg-teal-500/10 text-teal-600 shadow-[inset_0_0_12px_rgba(20,184,166,0.05)] border border-teal-500/20'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/60 border border-transparent'
+                      ? 'bg-teal-550/15 text-teal-600 shadow-[inset_0_0_12px_rgba(20,184,166,0.06)] border border-teal-500/20'
+                      : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 border border-transparent'
                   }`}
                 >
                   <Icon className={`h-4 w-4 ${isActive ? 'text-teal-600' : 'text-slate-500'}`} />
@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => setCurrentPage('auth')}
-              className="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors"
+              className="text-sm font-bold text-slate-700 hover:text-teal-600 transition-colors"
             >
               Sign In
             </button>
@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
               className="relative group overflow-hidden rounded-lg p-[1px] transition-all duration-300 active:scale-95"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-teal-400 opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="relative px-4 py-2 rounded-[7px] bg-dark-900 text-sm font-semibold text-teal-600 transition-colors group-hover:bg-transparent group-hover:text-dark-900">
+              <div className="relative px-4 py-2 rounded-[7px] bg-white text-sm font-bold text-teal-600 transition-colors group-hover:bg-transparent group-hover:text-white">
                 Book B2B Demo
               </div>
             </button>
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-teal-500/10 bg-dark-950/95 backdrop-blur-2xl">
+        <div className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-2xl shadow-lg">
           <div className="space-y-1 px-2 pb-4 pt-3">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -101,10 +101,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
                     setCurrentPage(item.id);
                     setIsOpen(false);
                   }}
-                  className={`flex w-full items-center gap-3 px-3 py-3 rounded-lg text-base font-medium transition-all ${
+                  className={`flex w-full items-center gap-3 px-3 py-3 rounded-lg text-base font-semibold transition-all ${
                     isActive
-                      ? 'bg-teal-500/15 text-teal-600 border-l-4 border-teal-500'
-                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                      ? 'bg-teal-500/10 text-teal-600 border-l-4 border-teal-500'
+                      : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -112,13 +112,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
                 </button>
               );
             })}
-            <div className="mt-4 pt-4 border-t border-teal-500/10 px-3 flex flex-col gap-3">
+            <div className="mt-4 pt-4 border-t border-slate-200 px-3 flex flex-col gap-3">
               <button
                 onClick={() => {
                   setCurrentPage('auth');
                   setIsOpen(false);
                 }}
-                className="w-full text-center py-2.5 rounded-lg border border-slate-300 hover:border-slate-400 text-sm font-medium text-slate-700 transition-colors"
+                className="w-full text-center py-2.5 rounded-lg border border-slate-350 hover:border-slate-500 text-sm font-bold text-slate-700 transition-colors"
               >
                 Sign In
               </button>
@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
                   setCurrentPage('contact');
                   setIsOpen(false);
                 }}
-                className="w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-sm font-semibold text-white transition-all shadow-[0_0_15px_rgba(20,184,166,0.2)]"
+                className="w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-sm font-bold text-white transition-all shadow-md"
               >
                 Book B2B Demo
               </button>
