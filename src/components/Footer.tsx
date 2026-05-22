@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900">EcoLoop</span>
             </div>
-            <p className="text-sm text-slate-650 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed">
               India's premier AI-powered circular economy technology platform. Streamlining industrial waste exchange, recycling workflows, and real-time ESG metrics tracking.
             </p>
             <div className="flex gap-3 mt-2">
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             <h3 className="text-sm font-bold tracking-wider uppercase text-teal-600 mb-6">Circular Focus</h3>
             <ul className="space-y-3">
               {['Metal Scrap Upcycling', 'Industrial Plastics Re-use', 'Textile Mill Waste', 'Wood Waste Recovery', 'Chemical Byproducts Processing', 'Organic Waste Digesting'].map((item) => (
-                <li key={item} className="text-sm text-slate-650 hover:text-teal-600 cursor-pointer transition-colors">
+                <li key={item} className="text-sm text-slate-600 hover:text-teal-600 cursor-pointer transition-colors">
                   {item}
                 </li>
               ))}

@@ -38,7 +38,7 @@ export const Contact: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           Book B2B Consultation Demo
         </h1>
-        <p className="text-sm text-slate-650 mt-2">
+        <p className="text-sm text-slate-600 mt-2">
           Align your plant's waste streams with verified circular routes. Request an RFP integration from our expert technical engineers.
         </p>
       </div>

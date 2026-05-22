@@ -62,7 +62,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             ESG & Circular Analytics
           </h1>
-          <p className="text-sm text-slate-650 mt-2">
+          <p className="text-sm text-slate-600 mt-2">
             Monitor real-time industrial material flows, Scope 3 emission audits, and circular carbon credits accruals.
           </p>
         </div>
@@ -117,7 +117,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
             <div className="flex justify-between items-center mb-6">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Industrial Material Flow Loop</h3>
-                <p className="text-xs text-slate-550 mt-1">Simulated raw waste extraction to recycler value conversion</p>
+                <p className="text-xs text-slate-500 mt-1">Simulated raw waste extraction to recycler value conversion</p>
               </div>
               <span className="text-xs text-slate-500 font-mono bg-slate-50 border border-slate-200 px-2 py-0.5 rounded">
                 Live SVG Stream
@@ -222,7 +222,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
                   </div>
 
                   <h4 className="text-xs font-bold text-slate-800">{rec.title}</h4>
-                  <p className="text-[11px] text-slate-550 leading-relaxed font-normal">{rec.description}</p>
+                  <p className="text-[11px] text-slate-500 leading-relaxed font-normal">{rec.description}</p>
                   
                   <button 
                     onClick={() => {

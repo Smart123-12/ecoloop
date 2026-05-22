@@ -176,7 +176,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
           <div className="glass-panel border border-teal-500/10 rounded-xl p-5 text-left">
             <div className="flex items-center justify-between border-b border-teal-500/10 pb-4 mb-4">
               <span className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
-                <SlidersHorizontal className="h-4 w-4 text-emerald-400" />
+                <SlidersHorizontal className="h-4 w-4 text-emerald-600" />
                 Filter Controls
               </span>
               <button 
@@ -305,7 +305,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
           <div className="text-left">
             <div className="flex items-center gap-2 mb-4 bg-emerald-950/20 border border-teal-500/10 px-3 py-1.5 rounded-lg max-w-max">
               <Cpu className="h-4 w-4 text-teal-600 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
                 EcoLoop AI High-Matching Allocations
               </span>
             </div>
@@ -354,7 +354,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                       {/* Left: Info */}
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
+                          <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest font-mono bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
                             {item.id}
                           </span>
                           <span className="text-xs bg-slate-900 text-slate-800 border border-slate-800 px-2 py-0.5 rounded">

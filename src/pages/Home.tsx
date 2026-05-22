@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Recycle, ShieldCheck, Cpu, BarChart3, Users, Leaf, ArrowUpRight, Flame, Scale, Globe } from 'lucide-react';
+import { ArrowRight, Recycle, ShieldCheck, Cpu, BarChart3, Users, Leaf, ArrowUpRight, Flame, Scale, Globe, Search, Truck, MapPin } from 'lucide-react';
 import { GlowCard } from '../components/GlowCard';
 
 interface HomeProps {
@@ -12,6 +12,16 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
   const [quantity, setQuantity] = useState(15); // Tons
   const [estimatedPrice, setEstimatedPrice] = useState(0);
   const [carbonSaved, setCarbonSaved] = useState(0);
+
+  // Surplus waste matcher states
+  const [surplusMaterial, setSurplusMaterial] = useState('plastic');
+  const [surplusVolume, setSurplusVolume] = useState('');
+  const [surplusCity, setSurplusCity] = useState('');
+  const [isScanning, setIsScanning] = useState(false);
+  const [scanCompleted, setScanCompleted] = useState(false);
+  const [matchedRecyclers, setMatchedRecyclers] = useState<any[]>([]);
+  const [dispatchStatus, setDispatchStatus] = useState<string | null>(null);
+  const [dispatchingId, setDispatchingId] = useState<string | null>(null);
 
   // Price & Carbon calculator
   useEffect(() => {
@@ -28,6 +38,57 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
     setEstimatedPrice(quantity * rate.price);
     setCarbonSaved(quantity * rate.carbon);
   }, [wasteType, quantity]);
+
+  const handleScanRecyclers = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!surplusVolume || !surplusCity) return;
+    
+    setIsScanning(true);
+    setScanCompleted(false);
+    setDispatchStatus(null);
+    
+    setTimeout(() => {
+      setIsScanning(false);
+      setScanCompleted(true);
+      
+      const db: Record<string, Array<{ id: string; name: string; distance: string; rate: string; demand: string; location: string }>> = {
+        metal: [
+          { id: 'REC-M1', name: 'Gujarat Metallurgical Corp', distance: '12 km', rate: '₹34,000/Ton', demand: 'High Demand', location: surplusCity },
+          { id: 'REC-M2', name: 'Daman Alloys & Refining', distance: '28 km', rate: '₹32,500/Ton', demand: 'Steady Demand', location: 'Daman' }
+        ],
+        plastic: [
+          { id: 'REC-P1', name: 'Vapi PET Reclamation Hub', distance: '8 km', rate: '₹19,200/Ton', demand: 'Urgently Buying', location: surplusCity },
+          { id: 'REC-P2', name: 'Surat Polymer Synthetics', distance: '45 km', rate: '₹18,500/Ton', demand: 'Bulk Demand', location: 'Surat' }
+        ],
+        textile: [
+          { id: 'REC-T1', name: 'Surat Synthetic Fiber Mills', distance: '14 km', rate: '₹12,800/Ton', demand: 'Steady Demand', location: surplusCity },
+          { id: 'REC-T2', name: 'Coimbatore Secondary Yarn Co', distance: '950 km', rate: '₹14,000/Ton', demand: 'High Volume', location: 'Coimbatore' }
+        ],
+        wood: [
+          { id: 'REC-W1', name: 'Vapi Biomass Fuels', distance: '6 km', rate: '₹8,500/Ton', demand: 'Steady Demand', location: surplusCity },
+          { id: 'REC-W2', name: 'GIDC Wood Pellets Ltd', distance: '19 km', rate: '₹7,800/Ton', demand: 'Low Moisture only', location: 'Valsad' }
+        ],
+        food: [
+          { id: 'REC-O1', name: 'Surat Bio-Compost Refinery', distance: '22 km', rate: '₹5,400/Ton', demand: 'Urgently Buying', location: surplusCity },
+          { id: 'REC-O2', name: 'GreenEnergy Organic Digesters', distance: '34 km', rate: '₹4,900/Ton', demand: 'Steady Demand', location: 'Navsari' }
+        ],
+        byproducts: [
+          { id: 'REC-B1', name: 'Eastern Cement Grinding Unit', distance: '15 km', rate: 'Custom Quote', demand: 'High slag/fly ash need', location: surplusCity },
+          { id: 'REC-B2', name: 'Surat Acid Neutralization', distance: '40 km', rate: 'Custom RFP', demand: 'Chemical byproduct spec', location: 'Surat' }
+        ]
+      };
+      
+      setMatchedRecyclers(db[surplusMaterial] || []);
+    }, 1500);
+  };
+
+  const handleDirectDispatch = (recyclerId: string, recyclerName: string) => {
+    setDispatchingId(recyclerId);
+    setTimeout(() => {
+      setDispatchStatus(`✅ Dispatch locked! GreenTruck #48 dispatched from Surat center to your facility in ${surplusCity}. Matched with ${recyclerName} for bulk recycling. Verified Recycling Business has been notified and logistics routing is active.`);
+      setDispatchingId(null);
+    }, 1200);
+  };
 
   return (
     <div className="relative z-10 pt-16">
@@ -113,7 +174,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                   <div className="h-8 w-0.5 bg-gradient-to-b from-teal-500/20 to-teal-400/20 relative">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-teal-400 animate-ping" />
                   </div>
-                  <div className="absolute top-1/2 -translate-y-1/2 px-2.5 py-0.5 rounded-full border border-cyan-500/30 bg-slate-100/50 text-[10px] font-bold text-cyan-400 tracking-wider">
+                  <div className="absolute top-1/2 -translate-y-1/2 px-2.5 py-0.5 rounded-full border border-cyan-500/30 bg-slate-100/50 text-[10px] font-bold text-teal-600 tracking-wider">
                     AI OPTIMIZED
                   </div>
                 </div>
@@ -174,7 +235,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           <p className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Seamless B2B Circular Workflows
           </p>
-          <p className="mt-4 text-base text-slate-650">
+          <p className="mt-4 text-base text-slate-600">
             A three-step optimized loop that transforms liabilities into profit margins.
           </p>
         </div>
@@ -243,7 +304,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 <span className="text-3xl mb-4 group-hover:scale-110 transition-transform origin-left">{cat.icon}</span>
                 <h4 className="text-sm font-bold text-slate-800 group-hover:text-teal-600 transition-colors">{cat.name}</h4>
                 <p className="text-[11px] text-teal-600 font-mono mt-1">{cat.count}</p>
-                <p className="text-[11px] text-slate-550 leading-tight mt-2">{cat.desc}</p>
+                <p className="text-[11px] text-slate-500 leading-tight mt-2">{cat.desc}</p>
               </div>
             ))}
           </div>
@@ -318,12 +379,12 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 {/* Simulated Output Calculations */}
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="p-4 rounded-xl bg-slate-50 border border-teal-500/5">
-                    <p className="text-[10px] uppercase font-semibold text-slate-550 tracking-wider">Estimated Value</p>
+                    <p className="text-[10px] uppercase font-semibold text-slate-500 tracking-wider">Estimated Value</p>
                     <p className="text-xl font-black text-slate-900 mt-1">₹{estimatedPrice.toLocaleString('en-IN')}</p>
                     <p className="text-[10px] text-teal-600 font-mono mt-0.5">B2B Est. Rate</p>
                   </div>
                   <div className="p-4 rounded-xl bg-slate-50 border border-teal-500/5">
-                    <p className="text-[10px] uppercase font-semibold text-slate-550 tracking-wider">CO₂ Savings</p>
+                    <p className="text-[10px] uppercase font-semibold text-slate-500 tracking-wider">CO₂ Savings</p>
                     <p className="text-xl font-black text-teal-600 mt-1 flex items-center gap-1">
                       <Leaf className="h-4.5 w-4.5 shrink-0" />
                       {carbonSaved.toFixed(1)} T
@@ -349,7 +410,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             <p className="text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
               AI-Powered Circular Tech Stack
             </p>
-            <p className="text-sm text-slate-650 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed">
               We leverage advanced deep learning networks to classify industrial byproducts, forecast regional price indexations, and resolve circular matches.
             </p>
 
@@ -369,6 +430,164 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5B - DIRECT SURPLUS WASTE MATCH CONNECTOR */}
+      <section className="py-20 bg-white border-t border-teal-500/10 relative overflow-hidden text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-600 backdrop-blur mb-4">
+              <Truck className="h-3.5 w-3.5" />
+              <span>Surplus Dispatcher (ઝડપી કનેક્ટ / Instant Match)</span>
+            </div>
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Instant Waste-to-Recycler Dispatcher
+            </h2>
+            <p className="text-sm text-slate-550 mt-2.5">
+              Got surplus industrial waste lying around? Specify your lot category, volume, and city to instantly scan and connect with certified local recycling businesses that are actively purchasing it.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Input Form Column */}
+            <div className="lg:col-span-5 relative">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-teal-500 to-teal-400 opacity-15 blur-lg" />
+              <div className="relative glass-panel rounded-2xl border border-teal-500/10 p-6 shadow-xl bg-white">
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Surplus Declaration Form</h3>
+                
+                <form onSubmit={handleScanRecyclers} className="space-y-4 text-xs">
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Lot Category</label>
+                    <select 
+                      value={surplusMaterial}
+                      onChange={(e) => setSurplusMaterial(e.target.value)}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-700 focus:outline-none focus:border-teal-500/40"
+                    >
+                      <option value="metal">🔩 Metal Scrap</option>
+                      <option value="plastic">♻️ Plastic Waste</option>
+                      <option value="textile">🧵 Textile Waste</option>
+                      <option value="wood">🪵 Wood Waste</option>
+                      <option value="food">🍎 Organic/Biomass</option>
+                      <option value="byproducts">🧪 Chemical Byproducts</option>
+                    </select>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Volume (Tons)</label>
+                      <input 
+                        type="number" 
+                        value={surplusVolume}
+                        onChange={(e) => setSurplusVolume(e.target.value)}
+                        placeholder="e.g. 15"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Current Facility City</label>
+                      <input 
+                        type="text" 
+                        value={surplusCity}
+                        onChange={(e) => setSurplusCity(e.target.value)}
+                        placeholder="e.g. Vapi, Surat"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <button 
+                    type="submit"
+                    className="w-full py-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold rounded-lg text-xs transition-all hover:opacity-90 flex items-center justify-center gap-1.5 shadow-[0_4px_15px_rgba(20,184,166,0.15)]"
+                    disabled={isScanning}
+                  >
+                    {isScanning ? 'Scanning Active Buyers...' : 'Find Matching Recycling Businesses'}
+                    <Search className="h-4 w-4" />
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Results Column */}
+            <div className="lg:col-span-7">
+              {isScanning && (
+                <div className="glass-panel rounded-2xl border border-teal-500/10 p-12 text-center shadow-xl flex flex-col items-center justify-center gap-4 min-h-[300px]">
+                  <div className="h-12 w-12 rounded-full border-4 border-slate-100 border-t-teal-500 animate-spin" />
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 animate-pulse">Running Neural Purity Matchmaker...</h4>
+                    <p className="text-xs text-slate-500 mt-1">Checking regional recycler capacities and logistical paths in {surplusCity}...</p>
+                  </div>
+                </div>
+              )}
+
+              {!isScanning && !scanCompleted && (
+                <div className="glass-panel rounded-2xl border border-slate-200 border-dashed p-12 text-center text-slate-500 shadow-sm flex flex-col items-center justify-center gap-2 min-h-[300px]">
+                  <Truck className="h-8 w-8 text-slate-400 stroke-1" />
+                  <h4 className="text-sm font-bold text-slate-800">Recycler Match Output</h4>
+                  <p className="text-xs max-w-md mx-auto">Fill in the Surplus Declaration Form and hit search to find certified buyers within your district who are ready to accept your waste lots immediately.</p>
+                </div>
+              )}
+
+              {!isScanning && scanCompleted && (
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center px-2">
+                    <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">Matched Recycling Businesses</span>
+                    <span className="text-[10px] text-teal-600 font-mono font-bold">{matchedRecyclers.length} Certified Facilities Found</span>
+                  </div>
+
+                  <div className="space-y-3">
+                    {matchedRecyclers.map((rec) => (
+                      <div 
+                        key={rec.id} 
+                        className="p-5 rounded-xl border border-slate-200 bg-white hover:border-teal-500/20 shadow-[0_2px_10px_rgba(148,163,184,0.02)] transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs animate-fadeIn"
+                      >
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <h4 className="text-sm font-extrabold text-slate-900 leading-snug">{rec.name}</h4>
+                            <span className="text-[8px] font-bold text-teal-700 bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded font-mono uppercase tracking-wider">{rec.demand}</span>
+                          </div>
+                          <div className="flex gap-4 text-slate-500 text-[10px] font-medium">
+                            <span className="flex items-center gap-0.5">
+                              <MapPin className="h-3 w-3 text-teal-600" />
+                              {rec.distance} away ({rec.location})
+                            </span>
+                            <span>Offer Rate: <strong className="text-slate-800 font-bold">{rec.rate}</strong></span>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => handleDirectDispatch(rec.id, rec.name)}
+                          className="px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold rounded-lg text-[10px] hover:opacity-95 transition-all shadow-[0_2px_6px_rgba(20,184,166,0.1)] flex items-center gap-1 shrink-0"
+                          disabled={dispatchingId === rec.id}
+                        >
+                          {dispatchingId === rec.id ? (
+                            <>
+                              <div className="h-2.5 w-2.5 rounded-full border-2 border-white border-t-transparent animate-spin mr-1" />
+                              Routing...
+                            </>
+                          ) : (
+                            <>
+                              Direct Dispatch & Route
+                              <ArrowRight className="h-3 w-3" />
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {dispatchStatus && (
+                    <div className="p-4 rounded-xl border border-teal-200 bg-teal-50/70 text-teal-700 font-semibold text-xs flex items-start gap-2.5 animate-pulse mt-4">
+                      <Truck className="h-4.5 w-4.5 shrink-0 mt-0.5 animate-bounce" />
+                      <p className="leading-relaxed">{dispatchStatus}</p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -424,7 +643,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 <div className="space-y-4">
                   {/* Gauge */}
                   <div className="flex justify-between items-center p-3 rounded-lg bg-slate-50 border border-teal-500/5">
-                    <span className="text-xs text-slate-550">Total Recycled Flow</span>
+                    <span className="text-xs text-slate-500">Total Recycled Flow</span>
                     <span className="text-xs font-mono font-bold text-slate-900">418.5 Tons</span>
                   </div>
                   {/* Scope 3 reductions slider mockup */}
@@ -484,7 +703,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             }
           ].map((item, idx) => (
             <GlowCard key={idx} className="flex flex-col justify-between text-left h-full">
-              <p className="text-sm text-slate-650 italic leading-relaxed">"{item.quote}"</p>
+              <p className="text-sm text-slate-600 italic leading-relaxed">"{item.quote}"</p>
               <div className="flex items-center gap-3 mt-6 border-t border-teal-500/10 pt-4">
                 <div className="h-9 w-9 rounded-full bg-teal-500/10 flex items-center justify-center text-lg">
                   {item.avatar}

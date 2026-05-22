@@ -184,7 +184,7 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Accepted Material Focuses</p>
                     <div className="flex flex-wrap gap-1.5">
                       {rec.materials.map((mat) => (
-                        <span key={mat} className="text-[10px] px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-650 font-medium">
+                        <span key={mat} className="text-[10px] px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-600 font-medium">
                           {mat}
                         </span>
                       ))}
@@ -205,7 +205,7 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
                   onClick={() => setCurrentPage('contact')}
                   className="flex items-center gap-1 px-3 py-1.5 bg-white border border-slate-200 hover:border-teal-500/35 text-xs font-semibold text-slate-700 hover:text-teal-600 rounded-lg transition-all shadow-[0_2px_6px_rgba(148,163,184,0.02)]"
                 >
-                  <MessageSquare className="h-3.5 w-3.5 text-emerald-400" />
+                  <MessageSquare className="h-3.5 w-3.5 text-emerald-600" />
                   Initiate RFP
                 </button>
               </div>

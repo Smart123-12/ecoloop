@@ -123,7 +123,7 @@ export const Pricing: React.FC<PricingProps> = ({ setCurrentPage }) => {
                 {plan.features.map((feature, fIdx) => (
                   <div key={fIdx} className="flex gap-2.5 items-start">
                     <Check className="h-4.5 w-4.5 text-teal-500 shrink-0 mt-0.5" />
-                    <span className="text-xs text-slate-650 font-medium leading-tight">{feature}</span>
+                    <span className="text-xs text-slate-600 font-medium leading-tight">{feature}</span>
                   </div>
                 ))}
                 {plan.missing.map((missingItem, mIdx) => (

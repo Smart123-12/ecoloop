@@ -21,7 +21,7 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           About EcoLoop Technology
         </h1>
-        <p className="text-sm text-slate-650 mt-2">
+        <p className="text-sm text-slate-600 mt-2">
           Pioneering the industrial climate-tech transition through digital raw material exchange and AI auditing loops.
         </p>
       </div>
@@ -69,7 +69,7 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-800">{item.title}</h4>
-                  <p className="text-[11px] text-slate-550 mt-1 leading-relaxed">{item.desc}</p>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

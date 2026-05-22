@@ -104,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
                   className={`flex w-full items-center gap-3 px-3 py-3 rounded-lg text-base font-medium transition-all ${
                     isActive
                       ? 'bg-teal-500/15 text-teal-600 border-l-4 border-teal-500'
-                      : 'text-slate-650 hover:bg-slate-100 hover:text-slate-900'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
