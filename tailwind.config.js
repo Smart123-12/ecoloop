@@ -8,33 +8,33 @@ export default {
     extend: {
       colors: {
         dark: {
-          DEFAULT: '#030712',
-          950: '#020617',
-          900: '#030712',
-          850: '#070c1b',
-          800: '#0b1329',
-          750: '#0f1b3a',
-          700: '#111827',
-          600: '#1f2937',
+          DEFAULT: '#f8fafc', // slate-50
+          950: '#f1f5f9',     // slate-100
+          900: '#ffffff',     // pure white
+          850: '#ffffff',     // pure white
+          800: '#f8fafc',     // slate-50
+          750: '#e2e8f0',     // slate-200
+          700: '#cbd5e1',     // slate-300
+          600: '#94a3b8',     // slate-400
         },
         primary: {
-          DEFAULT: '#10b981',
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
-          950: '#052e16',
+          DEFAULT: '#3b82f6', // pastel blue-500
+          50: '#eff6ff',      // blue-50
+          100: '#dbeafe',     // blue-100
+          200: '#bfdbfe',     // blue-200
+          300: '#93c5fd',     // blue-300
+          400: '#60a5fa',     // blue-400
+          500: '#3b82f6',     // blue-505
+          600: '#2563eb',     // blue-600
+          700: '#1d4ed8',     // blue-700
+          800: '#1e40af',     // blue-800
+          900: '#1e3a8a',     // blue-900
+          950: '#172554',     // blue-950
         },
         accent: {
-          cyan: '#06b6d4',
-          emerald: '#10b981',
-          lime: '#84cc16',
+          cyan: '#38bdf8',    // sky-400
+          emerald: '#3b82f6', // blue-500
+          lime: '#6366f1',    // indigo-500
         }
       },
       fontFamily: {

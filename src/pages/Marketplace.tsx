@@ -154,18 +154,18 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
   return (
     <div className="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Background Gradients */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 h-[350px] w-[600px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 h-[350px] w-[600px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
       
       {/* Title */}
       <div className="text-left mb-10">
         <div className="flex items-center gap-2 mb-2">
-          <Compass className="h-5 w-5 text-emerald-400" />
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Trading Hub</span>
+          <Compass className="h-5 w-5 text-blue-600" />
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Trading Hub</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           Industrial Waste Marketplace
         </h1>
-        <p className="text-sm text-slate-400 mt-2">
+        <p className="text-sm text-slate-600 mt-2">
           Discover high-grade recyclable scrap materials, audit purities, and initiate secure digital B2B contracts.
         </p>
       </div>
@@ -173,9 +173,9 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* LEFT COLUMN: FILTERS & CONTROL PANEL */}
         <div className="lg:col-span-3 space-y-6">
-          <div className="glass-panel border border-emerald-500/10 rounded-xl p-5 text-left">
-            <div className="flex items-center justify-between border-b border-emerald-500/10 pb-4 mb-4">
-              <span className="text-sm font-bold text-white flex items-center gap-1.5">
+          <div className="glass-panel border border-blue-500/10 rounded-xl p-5 text-left">
+            <div className="flex items-center justify-between border-b border-blue-500/10 pb-4 mb-4">
+              <span className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
                 <SlidersHorizontal className="h-4 w-4 text-emerald-400" />
                 Filter Controls
               </span>
@@ -187,7 +187,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                   setGradeFilter('all');
                   setSearchQuery('');
                 }}
-                className="text-[10px] text-emerald-400 hover:text-emerald-300 font-semibold"
+                className="text-[10px] text-blue-600 hover:text-blue-750 font-semibold"
               >
                 Reset All
               </button>
@@ -203,9 +203,9 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                     placeholder="Search copper, PET, mills..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-9 pr-3 py-2 rounded-lg bg-dark-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500/50"
+                    className="w-full pl-9 pr-3 py-2 rounded-lg bg-white border border-slate-200 text-xs text-slate-850 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
                   />
-                  <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-500" />
+                  <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-400" />
                 </div>
               </div>
 
@@ -215,7 +215,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full bg-dark-900 border border-slate-800 rounded-lg py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500/50"
+                  className="w-full bg-white border border-slate-200 rounded-lg py-2 px-3 text-xs text-slate-700 focus:outline-none focus:border-blue-500/40"
                 >
                   <option value="all">All Materials</option>
                   <option value="metal">🔩 Metal Scrap</option>
@@ -233,7 +233,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                 <select
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="w-full bg-dark-900 border border-slate-800 rounded-lg py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500/50"
+                  className="w-full bg-white border border-slate-200 rounded-lg py-2 px-3 text-xs text-slate-700 focus:outline-none focus:border-blue-500/40"
                 >
                   <option value="all">All India</option>
                   <option value="gujarat">Gujarat</option>
@@ -249,7 +249,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
               <div>
                 <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                   <span>Min Quantity</span>
-                  <span className="text-emerald-400 font-mono">{minQuantity} Tons</span>
+                  <span className="text-blue-600 font-mono">{minQuantity} Tons</span>
                 </div>
                 <input
                   type="range"
@@ -257,7 +257,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                   max="100"
                   value={minQuantity}
                   onChange={(e) => setMinQuantity(parseInt(e.target.value))}
-                  className="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+                  className="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
                 />
               </div>
 
@@ -271,8 +271,8 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                       onClick={() => setGradeFilter(grade)}
                       className={`text-left text-xs px-2.5 py-1.5 rounded transition-all ${
                         gradeFilter === grade 
-                          ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-500 font-semibold'
-                          : 'text-slate-400 hover:bg-slate-800/40 hover:text-slate-200'
+                          ? 'bg-blue-50 text-blue-600 border-l-2 border-blue-500 font-semibold'
+                          : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800'
                       }`}
                     >
                       {grade === 'all' ? 'All Grades' : grade}
@@ -284,14 +284,14 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
           </div>
 
           {/* QUICK DRAFT LISTING */}
-          <div className="p-5 rounded-xl border border-emerald-500/10 bg-dark-900 text-left">
-            <h4 className="text-xs font-bold text-slate-200 mb-2">Want to sell industrial lots?</h4>
-            <p className="text-[11px] text-slate-400 leading-normal mb-3">
+          <div className="p-5 rounded-xl border border-blue-500/10 bg-white text-left shadow-[0_2px_8px_rgba(148,163,184,0.02)] border border-slate-100">
+            <h4 className="text-xs font-bold text-slate-800 mb-2">Want to sell industrial lots?</h4>
+            <p className="text-[11px] text-slate-500 leading-normal mb-3">
               List raw slag, sorted plastics, organic pulps, or metal shavings.
             </p>
             <button 
               onClick={() => setCurrentPage('listings')}
-              className="w-full py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-xs font-semibold rounded-lg transition-all"
+              className="w-full py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 border border-blue-200 text-xs font-semibold rounded-lg transition-all"
             >
               List Waste Lots
             </button>
@@ -303,8 +303,8 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
           
           {/* AI MATCHMAKER RECOMMENDATIONS */}
           <div className="text-left">
-            <div className="flex items-center gap-2 mb-4 bg-emerald-950/20 border border-emerald-500/10 px-3 py-1.5 rounded-lg max-w-max">
-              <Cpu className="h-4 w-4 text-emerald-400 animate-pulse" />
+            <div className="flex items-center gap-2 mb-4 bg-emerald-950/20 border border-blue-500/10 px-3 py-1.5 rounded-lg max-w-max">
+              <Cpu className="h-4 w-4 text-blue-600 animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
                 EcoLoop AI High-Matching Allocations
               </span>
@@ -314,20 +314,20 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
               {aiRecommendations.slice(0, 2).map((item) => (
                 <div 
                   key={item.id} 
-                  className="relative group overflow-hidden rounded-xl border border-emerald-500/20 bg-dark-850/60 p-5 backdrop-blur shadow-[0_0_15px_rgba(16,185,129,0.05)] hover:border-emerald-500/40 transition-all duration-300"
+                  className="relative group overflow-hidden rounded-xl border border-blue-500/10 bg-white p-5 backdrop-blur shadow-[0_4px_15px_rgba(148,163,184,0.04)] hover:border-blue-500/25 transition-all duration-300"
                 >
-                  <div className="absolute top-0 right-0 px-3 py-1 bg-emerald-500 text-dark-900 font-bold text-[9px] uppercase tracking-wider rounded-bl-lg font-mono">
+                  <div className="absolute top-0 right-0 px-3 py-1 bg-blue-600 text-white font-bold text-[9px] uppercase tracking-wider rounded-bl-lg font-mono">
                     Match score: {item.matchScore}%
                   </div>
                   <span className="text-2xl">
                     {item.category === 'metal' ? '🔩' : item.category === 'plastic' ? '♻️' : item.category === 'byproducts' ? '🧪' : '🧵'}
                   </span>
-                  <h4 className="text-sm font-bold text-white mt-3 group-hover:text-emerald-400 transition-colors">
+                  <h4 className="text-sm font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">
                     {item.title}
                   </h4>
-                  <div className="flex justify-between items-center text-xs mt-4 pt-3 border-t border-emerald-500/10 text-slate-400">
+                  <div className="flex justify-between items-center text-xs mt-4 pt-3 border-t border-blue-500/10 text-slate-500">
                     <span>{item.quantity} Tons</span>
-                    <span className="text-emerald-400 font-bold font-mono">{item.price}</span>
+                    <span className="text-blue-600 font-bold font-mono">{item.price}</span>
                   </div>
                 </div>
               ))}
@@ -337,7 +337,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
           {/* FILTERED B2B LISTINGS */}
           <div className="text-left">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-sm font-bold text-slate-300">
+              <h3 className="text-sm font-bold text-slate-800">
                 Available Lots ({filteredListings.length})
               </h3>
               <span className="text-[10px] text-slate-500 font-mono">Real-time ledger updates</span>
@@ -348,43 +348,43 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                 filteredListings.map((item) => (
                   <div 
                     key={item.id}
-                    className="p-5 rounded-xl border border-slate-800 bg-dark-800/25 hover:border-emerald-500/20 hover:bg-dark-800/50 transition-all duration-300 relative"
+                    className="p-5 rounded-xl border border-slate-200 bg-white hover:border-blue-500/20 hover:bg-slate-50/50 shadow-[0_2px_8px_rgba(148,163,184,0.02)] transition-all duration-300 relative"
                   >
                     <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
                       {/* Left: Info */}
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-500/15">
+                          <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
                             {item.id}
                           </span>
-                          <span className="text-xs bg-slate-900 text-slate-300 border border-slate-800 px-2 py-0.5 rounded">
+                          <span className="text-xs bg-slate-900 text-slate-800 border border-slate-800 px-2 py-0.5 rounded">
                             {item.grade} Grade
                           </span>
                           {item.verified && (
-                            <span className="inline-flex items-center gap-1 text-[10px] text-cyan-400 bg-cyan-950/30 border border-cyan-500/25 px-2 py-0.5 rounded-full font-semibold">
+                            <span className="inline-flex items-center gap-1 text-[10px] text-blue-600 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full font-semibold">
                               <CheckCircle2 className="h-3 w-3" /> Purity Audit Verified
                             </span>
                           )}
                         </div>
                         
-                        <h3 className="text-base font-bold text-white mt-2.5">
+                        <h3 className="text-base font-bold text-slate-900 mt-2.5">
                           {item.title}
                         </h3>
 
                         <p className="text-xs text-slate-400 mt-1">
-                          Listed by: <strong className="text-slate-300">{item.producer}</strong>
+                          Listed by: <strong className="text-slate-800">{item.producer}</strong>
                         </p>
 
                         <div className="flex gap-4 items-center text-xs text-slate-500 mt-4 flex-wrap">
                           <span className="flex items-center gap-1">
-                            <MapPin className="h-3.5 w-3.5 text-emerald-500" />
+                            <MapPin className="h-3.5 w-3.5 text-blue-600" />
                             {item.location}
                           </span>
                           <span className="flex items-center gap-1">
-                            <Scale className="h-3.5 w-3.5 text-emerald-500" />
-                            Lot Size: <strong className="text-slate-300">{item.quantity} Tons</strong>
+                            <Scale className="h-3.5 w-3.5 text-blue-600" />
+                            Lot Size: <strong className="text-slate-800">{item.quantity} Tons</strong>
                           </span>
-                          <span className="text-cyan-400 font-semibold font-mono">
+                          <span className="text-blue-650 font-bold font-mono">
                             Offset: -{item.co2Saved} CO₂
                           </span>
                         </div>
@@ -394,13 +394,13 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                       <div className="flex sm:flex-col items-end justify-between sm:justify-start gap-2 shrink-0 sm:text-right">
                         <div>
                           <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Spot Rate Offer</p>
-                          <p className="text-lg font-black text-white mt-0.5">{item.price}</p>
+                          <p className="text-lg font-black text-slate-900 mt-0.5">{item.price}</p>
                           <p className="text-[10px] text-slate-400 font-mono mt-0.5">Moisture: {item.purity}</p>
                         </div>
 
                         <button 
                           onClick={() => setCurrentPage('listings')}
-                          className="sm:mt-4 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-dark-900 font-bold rounded-lg text-xs transition-all flex items-center gap-1"
+                          className="sm:mt-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-sky-400 hover:from-blue-700 hover:to-sky-500 text-white font-bold rounded-lg text-xs transition-all flex items-center gap-1 shadow-[0_2px_10px_rgba(59,130,246,0.1)]"
                         >
                           Bid / RFP
                           <ArrowUpRight className="h-3.5 w-3.5" />
@@ -410,7 +410,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                   </div>
                 ))
               ) : (
-                <div className="p-12 text-center rounded-xl border border-slate-800 bg-slate-900/20">
+                <div className="p-12 text-center rounded-xl border border-slate-800 bg-slate-50/50">
                   <AlertCircle className="h-8 w-8 text-slate-500 mx-auto mb-3" />
                   <p className="text-slate-400 text-sm font-semibold">No materials match your select parameters.</p>
                   <button 
@@ -421,7 +421,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ setCurrentPage }) => {
                       setGradeFilter('all');
                       setSearchQuery('');
                     }}
-                    className="text-xs text-emerald-400 hover:underline mt-2 font-medium"
+                    className="text-xs text-blue-600 hover:underline mt-2 font-medium"
                   >
                     Clear Filter Mappings
                   </button>
