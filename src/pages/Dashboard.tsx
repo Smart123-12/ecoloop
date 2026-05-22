@@ -49,14 +49,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
   return (
     <div className="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Background radial overlays */}
-      <div className="absolute top-1/4 left-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
-      <div className="absolute top-2/3 right-1/4 h-[300px] w-[300px] rounded-full bg-sky-500/5 blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 h-[400px] w-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-2/3 right-1/4 h-[300px] w-[300px] rounded-full bg-teal-500/5 blur-[80px] pointer-events-none" />
 
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 text-left">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <BarChart3 className="h-5 w-5 text-blue-600" />
+            <BarChart3 className="h-5 w-5 text-teal-600" />
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Enterprise Suite</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -75,7 +75,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 rounded-md text-xs font-semibold capitalize transition-all ${
                 activeTab === tab 
-                  ? 'bg-blue-600 text-white shadow-md font-bold'
+                  ? 'bg-teal-600 text-white shadow-md font-bold'
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >
@@ -91,17 +91,17 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
           const Icon = stat.icon;
           return (
             <div key={i} className="p-5 rounded-xl border border-slate-200 bg-white shadow-[0_2px_10px_rgba(148,163,184,0.03)] text-left relative overflow-hidden">
-              <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-bl from-blue-500/5 to-transparent pointer-events-none" />
+              <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-bl from-teal-500/5 to-transparent pointer-events-none" />
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500 tracking-wide uppercase">{stat.label}</span>
-                <div className={`h-8 w-8 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center ${
-                  stat.color === 'emerald' ? 'text-blue-600' : stat.color === 'cyan' ? 'text-blue-650' : 'text-indigo-600'
+                <div className={`h-8 w-8 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center ${
+                  stat.color === 'emerald' ? 'text-teal-600' : stat.color === 'cyan' ? 'text-teal-700' : 'text-indigo-600'
                 }`}>
                   <Icon className="h-4.5 w-4.5" />
                 </div>
               </div>
               <p className="text-2xl font-extrabold text-slate-900 mt-4">{stat.value}</p>
-              <p className="text-[10px] text-blue-600 font-mono mt-1 font-semibold flex items-center gap-1">
+              <p className="text-[10px] text-teal-600 font-mono mt-1 font-semibold flex items-center gap-1">
                 <TrendingUp className="h-3 w-3 shrink-0" />
                 {stat.change}
               </p>
@@ -113,7 +113,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* LEFT COLUMN: INTERACTIVE VISUAL CHARTS */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="p-6 rounded-xl border border-blue-500/10 bg-white shadow-[0_4px_20px_rgba(148,163,184,0.04)] text-left">
+          <div className="p-6 rounded-xl border border-teal-500/10 bg-white shadow-[0_4px_20px_rgba(148,163,184,0.04)] text-left">
             <div className="flex justify-between items-center mb-6">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Industrial Material Flow Loop</h3>
@@ -130,12 +130,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
                 {/* Node Definitions & Filters */}
                 <defs>
                   <linearGradient id="gradient-green-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.8" />
                   </linearGradient>
                   <linearGradient id="gradient-cyan-lime" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#6366f1" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.8" />
                   </linearGradient>
                 </defs>
 
@@ -147,39 +147,39 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
 
                 {/* NODE 1: INDUSTRIAL MILLS */}
                 <g transform="translate(40, 30)">
-                  <rect width="100" height="60" rx="8" fill="#ffffff" stroke="#3b82f6" strokeWidth="1" />
+                  <rect width="100" height="60" rx="8" fill="#ffffff" stroke="#14b8a6" strokeWidth="1" />
                   <text x="50" y="25" fill="#1e293b" textAnchor="middle" fontWeight="bold">Textile Mills</text>
-                  <text x="50" y="45" fill="#2563eb" textAnchor="middle" fontSize="10" fontFamily="monospace">142 Tons In</text>
+                  <text x="50" y="45" fill="#0d9488" textAnchor="middle" fontSize="10" fontFamily="monospace">142 Tons In</text>
                 </g>
 
                 {/* NODE 2: FACTORIES */}
                 <g transform="translate(40, 170)">
-                  <rect width="100" height="60" rx="8" fill="#ffffff" stroke="#3b82f6" strokeWidth="1" />
+                  <rect width="100" height="60" rx="8" fill="#ffffff" stroke="#14b8a6" strokeWidth="1" />
                   <text x="50" y="25" fill="#1e293b" textAnchor="middle" fontWeight="bold">Steel & Chem</text>
-                  <text x="50" y="45" fill="#2563eb" textAnchor="middle" fontSize="10" fontFamily="monospace">315 Tons In</text>
+                  <text x="50" y="45" fill="#0d9488" textAnchor="middle" fontSize="10" fontFamily="monospace">315 Tons In</text>
                 </g>
 
                 {/* NODE 3: ECOLOOP AI CENTER */}
                 <g transform="translate(250, 110)">
-                  <rect width="110" height="70" rx="10" fill="#f0f7ff" stroke="#3b82f6" strokeWidth="1.5" className="border-glow" />
-                  <text x="55" y="25" fill="#1d4ed8" textAnchor="middle" fontWeight="bold" fontSize="11">EcoLoop Engine</text>
+                  <rect width="110" height="70" rx="10" fill="#f0fdfa" stroke="#14b8a6" strokeWidth="1.5" className="border-glow" />
+                  <text x="55" y="25" fill="#0f766e" textAnchor="middle" fontWeight="bold" fontSize="11">EcoLoop Engine</text>
                   <text x="55" y="42" fill="#1e293b" textAnchor="middle" fontSize="10">Matchmaker AI</text>
-                  <text x="55" y="58" fill="#2563eb" textAnchor="middle" fontSize="9" fontFamily="monospace" fontWeight="semibold">94.2% Eff.</text>
-                  <circle cx="55" cy="5" r="3" fill="#3b82f6" className="animate-ping" />
+                  <text x="55" y="58" fill="#0d9488" textAnchor="middle" fontSize="9" fontFamily="monospace" fontWeight="semibold">94.2% Eff.</text>
+                  <circle cx="55" cy="5" r="3" fill="#14b8a6" className="animate-ping" />
                 </g>
 
                 {/* NODE 4: VERIFIED RECYCLERS */}
                 <g transform="translate(450, 30)">
-                  <rect width="110" height="60" rx="8" fill="#ffffff" stroke="#6366f1" strokeWidth="1" />
+                  <rect width="110" height="60" rx="8" fill="#ffffff" stroke="#10b981" strokeWidth="1" />
                   <text x="55" y="25" fill="#1e293b" textAnchor="middle" fontWeight="bold">Recyclers</text>
-                  <text x="55" y="45" fill="#6366f1" textAnchor="middle" fontSize="10" fontFamily="monospace">384 Tons Value</text>
+                  <text x="55" y="45" fill="#10b981" textAnchor="middle" fontSize="10" fontFamily="monospace">384 Tons Value</text>
                 </g>
 
                 {/* NODE 5: INDUSTRIAL BUYERS */}
                 <g transform="translate(450, 170)">
-                  <rect width="110" height="60" rx="8" fill="#ffffff" stroke="#6366f1" strokeWidth="1" />
+                  <rect width="110" height="60" rx="8" fill="#ffffff" stroke="#10b981" strokeWidth="1" />
                   <text x="55" y="25" fill="#1e293b" textAnchor="middle" fontWeight="bold">Secondary Buyers</text>
-                  <text x="55" y="45" fill="#6366f1" textAnchor="middle" fontSize="10" fontFamily="monospace">73 Tons Value</text>
+                  <text x="55" y="45" fill="#10b981" textAnchor="middle" fontSize="10" fontFamily="monospace">73 Tons Value</text>
                 </g>
               </svg>
             </div>
@@ -188,7 +188,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
               <span>* Material flows are modeled using simulated Sankey loops</span>
               <button 
                 onClick={() => setCurrentPage('marketplace')}
-                className="text-blue-600 hover:text-emerald-300 font-semibold flex items-center gap-1"
+                className="text-teal-600 hover:text-emerald-300 font-semibold flex items-center gap-1"
               >
                 Inspect Marketplace Batches
                 <ArrowUpRight className="h-3.5 w-3.5" />
@@ -199,9 +199,9 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
 
         {/* RIGHT COLUMN: INSIGHTS & AI RECOMMENDATIONS */}
         <div className="lg:col-span-4 space-y-6">
-          <div className="p-6 rounded-xl border border-blue-500/10 bg-white shadow-[0_4px_20px_rgba(148,163,184,0.04)] text-left h-full">
+          <div className="p-6 rounded-xl border border-teal-500/10 bg-white shadow-[0_4px_20px_rgba(148,163,184,0.04)] text-left h-full">
             <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2 mb-4 uppercase tracking-wider">
-              <Lightbulb className="h-4.5 w-4.5 text-blue-600" />
+              <Lightbulb className="h-4.5 w-4.5 text-teal-600" />
               AI ESG Prescriptions
             </h3>
             
@@ -212,13 +212,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
                   className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-500/10 transition-all flex flex-col gap-2 relative overflow-hidden"
                 >
                   {/* Top shimmer indicator */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-teal-500/20 to-transparent" />
                   
                   <div className="flex justify-between items-center text-xs">
-                    <span className="font-mono text-[9px] font-bold text-blue-600 tracking-wider bg-emerald-950/40 border border-emerald-500/15 px-1.5 py-0.5 rounded">
+                    <span className="font-mono text-[9px] font-bold text-teal-600 tracking-wider bg-emerald-950/40 border border-emerald-500/15 px-1.5 py-0.5 rounded">
                       {rec.id}
                     </span>
-                    <span className="text-blue-650 font-semibold font-mono">{rec.impact}</span>
+                    <span className="text-teal-700 font-semibold font-mono">{rec.impact}</span>
                   </div>
 
                   <h4 className="text-xs font-bold text-slate-800">{rec.title}</h4>
@@ -230,7 +230,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
                       else if (rec.id === 'REC-B') setCurrentPage('listings');
                       else setCurrentPage('contact');
                     }}
-                    className="text-[10px] font-semibold text-blue-600 hover:underline text-left mt-1 max-w-max"
+                    className="text-[10px] font-semibold text-teal-600 hover:underline text-left mt-1 max-w-max"
                   >
                     {rec.actionLabel} &rarr;
                   </button>

@@ -78,12 +78,12 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
   return (
     <div className="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Radial overlay */}
-      <div className="absolute top-10 left-10 h-[300px] w-[300px] rounded-full bg-blue-500/5 blur-[90px] pointer-events-none" />
+      <div className="absolute top-10 left-10 h-[300px] w-[300px] rounded-full bg-teal-500/5 blur-[90px] pointer-events-none" />
 
       {/* Page Title */}
       <div className="text-left mb-10">
         <div className="flex items-center gap-2 mb-2">
-          <ListCollapse className="h-5 w-5 text-blue-600" />
+          <ListCollapse className="h-5 w-5 text-teal-600" />
           <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Trading Ledger</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -100,8 +100,8 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
           <div className="text-left">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-sm font-bold text-slate-800">Live Active Lots Bidding</h3>
-              <span className="text-[10px] text-blue-600 font-mono font-semibold flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-blue-500 animate-ping" />
+              <span className="text-[10px] text-teal-600 font-mono font-semibold flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-teal-500 animate-ping" />
                 Updating Live
               </span>
             </div>
@@ -110,15 +110,15 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
               {bids.map((bid) => (
                 <div 
                   key={bid.id}
-                  className="p-5 rounded-xl border border-slate-200 bg-white hover:border-blue-500/20 shadow-[0_2px_10px_rgba(148,163,184,0.03)] transition-all flex flex-col sm:flex-row justify-between gap-4"
+                  className="p-5 rounded-xl border border-slate-200 bg-white hover:border-teal-500/20 shadow-[0_2px_10px_rgba(148,163,184,0.03)] transition-all flex flex-col sm:flex-row justify-between gap-4"
                 >
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold text-blue-650 font-mono bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded">
+                      <span className="text-[10px] font-bold text-teal-700 font-mono bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded">
                         {bid.id}
                       </span>
                       <span className="text-[10px] text-slate-500 font-mono flex items-center gap-1">
-                        <Clock className="h-3 w-3 text-blue-600" />
+                        <Clock className="h-3 w-3 text-teal-600" />
                         {bid.timeLeft}
                       </span>
                     </div>
@@ -138,12 +138,12 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                     <div>
                       <p className="text-[9px] uppercase font-bold tracking-widest text-slate-500">Current High RFP Bid</p>
                       <p className="text-lg font-black text-slate-900 mt-0.5">₹{bid.currentBid.toLocaleString('en-IN')}</p>
-                      <p className="text-[10px] text-blue-650 font-mono font-semibold">+₹5,000 Next Increment</p>
+                      <p className="text-[10px] text-teal-700 font-mono font-semibold">+₹5,000 Next Increment</p>
                     </div>
 
                     <button 
                       onClick={() => alert(`Bid of ₹${(bid.currentBid + 5000).toLocaleString('en-IN')} submitted successfully for ${bid.item}!`)}
-                      className="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-sky-400 hover:from-blue-700 hover:to-sky-500 text-white font-bold rounded-lg text-xs transition-all shadow-[0_2px_6px_rgba(59,130,246,0.1)]"
+                      className="px-3.5 py-1.5 bg-gradient-to-r from-teal-600 to-teal-400 hover:from-teal-700 hover:to-teal-500 text-white font-bold rounded-lg text-xs transition-all shadow-[0_2px_6px_rgba(20,184,166,0.1)]"
                     >
                       Increment Bid
                     </button>
@@ -156,7 +156,7 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
 
         {/* RIGHT COLUMN: LIST NEW MATERIAL FORM */}
         <div className="lg:col-span-5 relative">
-          <div className="absolute -inset-1 rounded-xl bg-gradient-to-tr from-blue-500 to-sky-500 opacity-15 blur-lg" />
+          <div className="absolute -inset-1 rounded-xl bg-gradient-to-tr from-teal-500 to-teal-500 opacity-15 blur-lg" />
           <GlowCard className="relative text-left p-6" glowColor="cyan">
             <h3 className="text-base font-bold text-slate-900 mb-1">Create Material RFP Listing</h3>
             <p className="text-xs text-slate-550 mb-5">List surplus or byproduct volumes to receive qualified bids from certified processors.</p>
@@ -169,7 +169,7 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="e.g. 15 Tons Recycled PP Shreds"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
                   required
                 />
               </div>
@@ -180,7 +180,7 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                   <select 
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-700 focus:outline-none focus:border-blue-500/40"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-700 focus:outline-none focus:border-teal-500/40"
                   >
                     <option value="metal">🔩 Metal Scrap</option>
                     <option value="plastic">♻️ Plastic Waste</option>
@@ -197,7 +197,7 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="e.g. 15"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
                     required
                   />
                 </div>
@@ -211,7 +211,7 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                     value={purity}
                     onChange={(e) => setPurity(e.target.value)}
                     placeholder="e.g. 98.4%"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
                   />
                 </div>
                 <div>
@@ -221,7 +221,7 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                     value={reservePrice}
                     onChange={(e) => setReservePrice(e.target.value)}
                     placeholder="e.g. 75000"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
                     required
                   />
                 </div>
@@ -234,21 +234,21 @@ export const WasteListings: React.FC<WasteListingsProps> = ({ setCurrentPage }) 
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   placeholder="e.g. Vapi, Gujarat"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
                   required
                 />
               </div>
 
               <button 
                 type="submit"
-                className="w-full py-3 bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold rounded-lg text-xs transition-all hover:opacity-90 shadow-[0_4px_15px_rgba(59,130,246,0.15)] flex items-center justify-center gap-1.5"
+                className="w-full py-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold rounded-lg text-xs transition-all hover:opacity-90 shadow-[0_4px_15px_rgba(20,184,166,0.15)] flex items-center justify-center gap-1.5"
               >
                 Create Digital B2B RFP
                 <Plus className="h-4 w-4" />
               </button>
 
               {formSuccess && (
-                <div className="p-3 bg-blue-50 border border-blue-200 text-blue-600 rounded-lg text-[11px] font-semibold text-center flex items-center justify-center gap-1.5 animate-pulse mt-3">
+                <div className="p-3 bg-teal-50 border border-teal-200 text-teal-600 rounded-lg text-[11px] font-semibold text-center flex items-center justify-center gap-1.5 animate-pulse mt-3">
                   <CheckCircle2 className="h-4 w-4 shrink-0" />
                   RFP Listed Successfully! Added to Live Bidding Feed.
                 </div>

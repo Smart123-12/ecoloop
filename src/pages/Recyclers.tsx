@@ -94,12 +94,12 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
   return (
     <div className="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Background Gradients */}
-      <div className="absolute top-10 right-1/4 h-[300px] w-[500px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 right-1/4 h-[300px] w-[500px] rounded-full bg-teal-500/5 blur-[120px] pointer-events-none" />
       
       {/* Page Title */}
       <div className="text-left mb-10">
         <div className="flex items-center gap-2 mb-2">
-          <Users className="h-5 w-5 text-blue-600" />
+          <Users className="h-5 w-5 text-teal-600" />
           <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Ecosystem Network</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -111,14 +111,14 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
       </div>
 
       {/* Directory Searching & Filtering Bar */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-between items-center bg-white border border-blue-500/10 p-4 rounded-xl text-left shadow-[0_2px_8px_rgba(148,163,184,0.02)]">
+      <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-between items-center bg-white border border-teal-500/10 p-4 rounded-xl text-left shadow-[0_2px_8px_rgba(148,163,184,0.02)]">
         <div className="relative w-full sm:max-w-md">
           <input
             type="text"
             placeholder="Search recyclers name or city..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500/40"
+            className="w-full pl-9 pr-3 py-2 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:border-teal-500/40"
           />
           <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-400" />
         </div>
@@ -130,7 +130,7 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
               onClick={() => setMaterialFilter(mat === 'all' ? 'all' : mat)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 (materialFilter === 'all' && mat === 'all') || (materialFilter.toLowerCase() === mat.toLowerCase())
-                  ? 'bg-blue-50 border border-blue-200 text-blue-600'
+                  ? 'bg-teal-50 border border-teal-200 text-teal-600'
                   : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-700'
               }`}
             >
@@ -147,18 +147,18 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
             <GlowCard key={rec.id} className="flex flex-col justify-between text-left h-full" glowColor={rec.esgScore >= 95 ? 'green' : 'cyan'}>
               <div>
                 {/* Header info */}
-                <div className="flex justify-between items-start mb-4 border-b border-blue-500/10 pb-4">
+                <div className="flex justify-between items-start mb-4 border-b border-teal-500/10 pb-4">
                   <div>
                     <span className="text-[10px] font-bold text-slate-500 font-mono block mb-1">ID: {rec.id}</span>
-                    <h3 className="text-base font-extrabold text-slate-900 leading-snug group-hover:text-blue-600">{rec.name}</h3>
+                    <h3 className="text-base font-extrabold text-slate-900 leading-snug group-hover:text-teal-600">{rec.name}</h3>
                   </div>
                   <div className="flex flex-col items-end">
-                    <span className="text-xs bg-blue-50 text-blue-600 border border-blue-150 px-2 py-0.5 rounded font-mono font-bold">
+                    <span className="text-xs bg-teal-50 text-teal-600 border border-teal-100 px-2 py-0.5 rounded font-mono font-bold">
                       ESG {rec.esgScore}
                     </span>
                     {rec.certified && (
-                      <span className="inline-flex items-center gap-0.5 text-[8px] text-blue-650 font-bold uppercase tracking-wider mt-1">
-                        <ShieldCheck className="h-3 w-3 shrink-0 text-blue-600" />
+                      <span className="inline-flex items-center gap-0.5 text-[8px] text-teal-700 font-bold uppercase tracking-wider mt-1">
+                        <ShieldCheck className="h-3 w-3 shrink-0 text-teal-600" />
                         Audited
                       </span>
                     )}
@@ -175,7 +175,7 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
 
                   {/* Location info */}
                   <p className="text-xs text-slate-600 flex items-center gap-1">
-                    <MapPin className="h-3.5 w-3.5 text-blue-600" />
+                    <MapPin className="h-3.5 w-3.5 text-teal-600" />
                     {rec.location}
                   </p>
 
@@ -194,16 +194,16 @@ export const Recyclers: React.FC<RecyclersProps> = ({ setCurrentPage }) => {
               </div>
 
               {/* Bottom reviews and call buttons */}
-              <div className="border-t border-blue-500/10 pt-4 flex justify-between items-center mt-auto">
+              <div className="border-t border-teal-500/10 pt-4 flex justify-between items-center mt-auto">
                 <div className="flex items-center gap-1">
-                  <Star className="h-4.5 w-4.5 fill-blue-500 text-blue-500" />
+                  <Star className="h-4.5 w-4.5 fill-teal-500 text-teal-500" />
                   <span className="text-xs font-bold text-slate-900 font-mono">{rec.rating}</span>
                   <span className="text-[10px] text-slate-500 font-mono">(140+ deals)</span>
                 </div>
 
                 <button
                   onClick={() => setCurrentPage('contact')}
-                  className="flex items-center gap-1 px-3 py-1.5 bg-white border border-slate-200 hover:border-blue-500/35 text-xs font-semibold text-slate-700 hover:text-blue-600 rounded-lg transition-all shadow-[0_2px_6px_rgba(148,163,184,0.02)]"
+                  className="flex items-center gap-1 px-3 py-1.5 bg-white border border-slate-200 hover:border-teal-500/35 text-xs font-semibold text-slate-700 hover:text-teal-600 rounded-lg transition-all shadow-[0_2px_6px_rgba(148,163,184,0.02)]"
                 >
                   <MessageSquare className="h-3.5 w-3.5 text-emerald-400" />
                   Initiate RFP

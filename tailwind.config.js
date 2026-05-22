@@ -18,23 +18,23 @@ export default {
           600: '#94a3b8',     // slate-400
         },
         primary: {
-          DEFAULT: '#3b82f6', // pastel blue-500
-          50: '#eff6ff',      // blue-50
-          100: '#dbeafe',     // blue-100
-          200: '#bfdbfe',     // blue-200
-          300: '#93c5fd',     // blue-300
-          400: '#60a5fa',     // blue-400
-          500: '#3b82f6',     // blue-505
-          600: '#2563eb',     // blue-600
-          700: '#1d4ed8',     // blue-700
-          800: '#1e40af',     // blue-800
-          900: '#1e3a8a',     // blue-900
-          950: '#172554',     // blue-950
+          DEFAULT: '#0d9488', // sleek teal-600
+          50: '#f0fdfa',      // teal-50
+          100: '#ccfbf1',     // teal-100
+          200: '#99f6e4',     // teal-200
+          300: '#5eead4',     // teal-300
+          400: '#2dd4bf',     // teal-400
+          500: '#14b8a6',     // teal-505
+          600: '#0d9488',     // teal-600
+          700: '#0f766e',     // teal-700
+          800: '#115e59',     // teal-800
+          900: '#134e4a',     // teal-900
+          950: '#042f2e',     // teal-950
         },
         accent: {
-          cyan: '#38bdf8',    // sky-400
-          emerald: '#3b82f6', // blue-500
-          lime: '#6366f1',    // indigo-500
+          cyan: '#2dd4bf',    // mint/cyan-400
+          emerald: '#10b981', // emerald-500
+          lime: '#14b8a6',    // teal-500
         }
       },
       fontFamily: {

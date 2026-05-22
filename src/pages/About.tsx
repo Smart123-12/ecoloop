@@ -10,12 +10,12 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
   return (
     <div className="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Background glowing gradients */}
-      <div className="absolute top-10 left-10 h-[300px] w-[300px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-10 left-10 h-[300px] w-[300px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none" />
 
       {/* Page Title */}
       <div className="text-left mb-12">
         <div className="flex items-center gap-2 mb-2">
-          <HelpCircle className="h-5 w-5 text-blue-600" />
+          <HelpCircle className="h-5 w-5 text-teal-600" />
           <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Our Identity</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -41,7 +41,7 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
           <div className="flex gap-4 mt-6">
             <button 
               onClick={() => setCurrentPage('marketplace')}
-              className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold rounded-lg text-xs shadow-[0_4px_15px_rgba(59,130,246,0.15)] transition-all hover:scale-102"
+              className="px-5 py-2.5 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold rounded-lg text-xs shadow-[0_4px_15px_rgba(20,184,166,0.15)] transition-all hover:scale-102"
             >
               Explore Trading Ledger
             </button>
@@ -56,15 +56,15 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
 
         {/* Circular graphic */}
         <div className="relative">
-          <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500 to-sky-500 opacity-15 blur-lg" />
-          <div className="relative rounded-xl border border-blue-500/10 bg-white p-6 flex flex-col gap-4 shadow-xl border border-slate-100">
+          <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-teal-500 to-teal-500 opacity-15 blur-lg" />
+          <div className="relative rounded-xl border border-teal-500/10 bg-white p-6 flex flex-col gap-4 shadow-xl border border-slate-100">
             {[
               { title: 'BRSR Compliance Ready', desc: 'Outputs standard environmental formats required for Indian corporate ESG reporting.', icon: ShieldCheck },
               { title: 'AI Match-matching Efficiency', desc: 'Predictive neural matching processes geographic indices to optimize trade margins.', icon: Cpu },
               { title: 'Secure Auditable Ledgers', desc: 'Each transaction generates verified, immutable recycling logs to prevent greenwashing audits.', icon: CheckCircle2 }
             ].map((item, idx) => (
               <div key={idx} className="flex gap-4 p-4 rounded-lg bg-slate-50 border border-slate-200">
-                <div className="h-9 w-9 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 border border-blue-200">
+                <div className="h-9 w-9 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 shrink-0 border border-teal-200">
                   <item.icon className="h-4.5 w-4.5" />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
 
       {/* TECH ARCHITECTURE SECTION */}
       <div className="text-center mb-10">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600">Engineering</h2>
+        <h2 className="text-xs font-bold uppercase tracking-widest text-teal-600">Engineering</h2>
         <p className="mt-2 text-2xl font-extrabold text-slate-900">EcoLoop Neural Platform Stack</p>
       </div>
 
@@ -102,7 +102,7 @@ export const About: React.FC<AboutProps> = ({ setCurrentPage }) => {
           }
         ].map((tech, idx) => (
           <GlowCard key={idx} className="flex flex-col gap-4">
-            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest font-mono bg-blue-50 px-2 py-0.5 rounded self-start border border-blue-200">
+            <span className="text-[10px] font-bold text-teal-600 uppercase tracking-widest font-mono bg-teal-50 px-2 py-0.5 rounded self-start border border-teal-200">
               {tech.role}
             </span>
             <h3 className="text-base font-bold text-slate-900 mt-1">{tech.title}</h3>

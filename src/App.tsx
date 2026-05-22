@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-dark text-slate-800 flex flex-col justify-between selection:bg-blue-500/20 selection:text-blue-600">
+    <div className="relative min-h-screen bg-dark text-slate-800 flex flex-col justify-between selection:bg-teal-500/20 selection:text-teal-600">
       <div>
         {/* Navigation */}
         <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
